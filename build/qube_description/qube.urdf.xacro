@@ -1,0 +1,13 @@
+<xacro:include filename="$(find qube_description)/urdf/qube.macro.xacro" />
+
+#world link
+<link name = "world"/>
+
+<xacro:qube/>
+
+#Linke Qube to world
+<joint name = "worldJoint" type = "fixed">
+    <parent link = "world"/>
+    <child link = "baseLink"/>
+    <origin xyz = "0 0 0"/>
+</joint>

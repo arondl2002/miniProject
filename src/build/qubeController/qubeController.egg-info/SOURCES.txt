@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+../build/qubeController/qubeController.egg-info/PKG-INFO
+../build/qubeController/qubeController.egg-info/SOURCES.txt
+../build/qubeController/qubeController.egg-info/dependency_links.txt
+../build/qubeController/qubeController.egg-info/requires.txt
+../build/qubeController/qubeController.egg-info/top_level.txt
+../build/qubeController/qubeController.egg-info/zip-safe
+qubeController/__init__.py
+resource/qubeController
+test/test_copyright.py
+test/test_flake8.py
+test/test_pep257.py

@@ -1,0 +1,34 @@
+[1.111s] Invoking command in '/home/aron-larsen/miniProject_ws/src/build/qubeDriver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/aron-larsen/miniProject_ws/src/qubeDriver -DCMAKE_INSTALL_PREFIX=/home/aron-larsen/miniProject_ws/src/install/qubeDriver
+[1.327s] -- The C compiler identification is GNU 13.3.0
+[1.485s] -- The CXX compiler identification is GNU 13.3.0
+[1.517s] -- Detecting C compiler ABI info
+[1.662s] -- Detecting C compiler ABI info - done
+[1.670s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.671s] -- Detecting C compile features
+[1.672s] -- Detecting C compile features - done
+[1.687s] -- Detecting CXX compiler ABI info
+[1.839s] -- Detecting CXX compiler ABI info - done
+[1.850s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.850s] -- Detecting CXX compile features
+[1.850s] -- Detecting CXX compile features - done
+[1.858s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.061s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.232s] [31mCMake Error at CMakeLists.txt:10 (find_package):
+[2.232s]   By not providing "Findros2_control.cmake" in CMAKE_MODULE_PATH this project
+[2.233s]   has asked CMake to find a package configuration file provided by
+[2.233s]   "ros2_control", but CMake did not find one.
+[2.233s] 
+[2.233s]   Could not find a package configuration file provided by "ros2_control" with
+[2.233s]   any of the following names:
+[2.233s] 
+[2.233s]     ros2_controlConfig.cmake
+[2.234s]     ros2_control-config.cmake
+[2.234s] 
+[2.234s]   Add the installation prefix of "ros2_control" to CMAKE_PREFIX_PATH or set
+[2.234s]   "ros2_control_DIR" to a directory containing one of the above files.  If
+[2.234s]   "ros2_control" provides a separate development package or SDK, be sure it
+[2.234s]   has been installed.
+[2.234s] 
+[2.235s] [0m
+[2.235s] -- Configuring incomplete, errors occurred!
+[2.239s] Invoked command in '/home/aron-larsen/miniProject_ws/src/build/qubeDriver' returned '1': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/aron-larsen/miniProject_ws/src/qubeDriver -DCMAKE_INSTALL_PREFIX=/home/aron-larsen/miniProject_ws/src/install/qubeDriver

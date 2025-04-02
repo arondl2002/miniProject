@@ -1,0 +1,11 @@
+<?xml version = "1.0"?>
+<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+
+    <!-- Argumenter -->
+    <xacro:arg name = "baudRate" default = "115200">
+    <xacro:arg name = "device" default = "/dev/ttyUSB0">
+    <xacro:arg name = "simulation" default = "false"/>
+
+    <!-- Inkluder beskrivelse av qube -->
+    <xacro:include filename = "$(find qube_description)/urdf/qube.macro.xacro"/>
+    <xacro:include filename = "$(find qube_driver)/ros2_control/qube_driver.ros2_control.xacro"/>

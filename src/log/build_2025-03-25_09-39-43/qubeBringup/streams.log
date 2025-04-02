@@ -1,0 +1,31 @@
+[2.104s] Invoking command in '/home/aron-larsen/miniProject_ws/src/qubeBringup': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aron-larsen/miniProject_ws/src/build/qubeBringup/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aron-larsen/miniProject_ws/src/install/qubeBringup/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/qubeBringup build --build-base /home/aron-larsen/miniProject_ws/src/build/qubeBringup/build install --record /home/aron-larsen/miniProject_ws/src/build/qubeBringup/install.log --single-version-externally-managed install_data
+[2.397s] running egg_info
+[2.398s] creating ../build/qubeBringup/qubeBringup.egg-info
+[2.417s] writing ../build/qubeBringup/qubeBringup.egg-info/PKG-INFO
+[2.419s] writing dependency_links to ../build/qubeBringup/qubeBringup.egg-info/dependency_links.txt
+[2.419s] writing requirements to ../build/qubeBringup/qubeBringup.egg-info/requires.txt
+[2.419s] writing top-level names to ../build/qubeBringup/qubeBringup.egg-info/top_level.txt
+[2.419s] writing manifest file '../build/qubeBringup/qubeBringup.egg-info/SOURCES.txt'
+[2.458s] reading manifest file '../build/qubeBringup/qubeBringup.egg-info/SOURCES.txt'
+[2.459s] writing manifest file '../build/qubeBringup/qubeBringup.egg-info/SOURCES.txt'
+[2.459s] running build
+[2.460s] running build_py
+[2.460s] creating /home/aron-larsen/miniProject_ws/src/build/qubeBringup/build
+[2.462s] creating /home/aron-larsen/miniProject_ws/src/build/qubeBringup/build/lib
+[2.462s] creating /home/aron-larsen/miniProject_ws/src/build/qubeBringup/build/lib/qubeBringup
+[2.462s] copying qubeBringup/__init__.py -> /home/aron-larsen/miniProject_ws/src/build/qubeBringup/build/lib/qubeBringup
+[2.462s] running install
+[2.467s] running install_lib
+[2.486s] creating /home/aron-larsen/miniProject_ws/src/install/qubeBringup/lib/python3.12/site-packages/qubeBringup
+[2.487s] copying /home/aron-larsen/miniProject_ws/src/build/qubeBringup/build/lib/qubeBringup/__init__.py -> /home/aron-larsen/miniProject_ws/src/install/qubeBringup/lib/python3.12/site-packages/qubeBringup
+[2.487s] byte-compiling /home/aron-larsen/miniProject_ws/src/install/qubeBringup/lib/python3.12/site-packages/qubeBringup/__init__.py to __init__.cpython-312.pyc
+[2.488s] running install_data
+[2.488s] creating /home/aron-larsen/miniProject_ws/src/install/qubeBringup/share/ament_index
+[2.489s] creating /home/aron-larsen/miniProject_ws/src/install/qubeBringup/share/ament_index/resource_index
+[2.489s] creating /home/aron-larsen/miniProject_ws/src/install/qubeBringup/share/ament_index/resource_index/packages
+[2.489s] copying resource/qubeBringup -> /home/aron-larsen/miniProject_ws/src/install/qubeBringup/share/ament_index/resource_index/packages
+[2.489s] copying package.xml -> /home/aron-larsen/miniProject_ws/src/install/qubeBringup/share/qubeBringup
+[2.489s] running install_egg_info
+[2.510s] Copying ../build/qubeBringup/qubeBringup.egg-info to /home/aron-larsen/miniProject_ws/src/install/qubeBringup/lib/python3.12/site-packages/qubeBringup-0.0.0-py3.12.egg-info
+[2.512s] running install_scripts
+[2.651s] writing list of installed files to '/home/aron-larsen/miniProject_ws/src/build/qubeBringup/install.log'

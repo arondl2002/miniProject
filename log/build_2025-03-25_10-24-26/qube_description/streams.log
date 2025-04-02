@@ -1,0 +1,32 @@
+[2.271s] Invoking command in '/home/aron-larsen/miniProject_ws/src/qube_description': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aron-larsen/miniProject_ws/build/qube_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aron-larsen/miniProject_ws/install/qube_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/qube_description build --build-base /home/aron-larsen/miniProject_ws/build/qube_description/build install --record /home/aron-larsen/miniProject_ws/build/qube_description/install.log --single-version-externally-managed install_data
+[2.564s] running egg_info
+[2.564s] creating ../../build/qube_description/qube_description.egg-info
+[2.584s] writing ../../build/qube_description/qube_description.egg-info/PKG-INFO
+[2.585s] writing dependency_links to ../../build/qube_description/qube_description.egg-info/dependency_links.txt
+[2.586s] writing requirements to ../../build/qube_description/qube_description.egg-info/requires.txt
+[2.586s] writing top-level names to ../../build/qube_description/qube_description.egg-info/top_level.txt
+[2.586s] writing manifest file '../../build/qube_description/qube_description.egg-info/SOURCES.txt'
+[2.628s] reading manifest file '../../build/qube_description/qube_description.egg-info/SOURCES.txt'
+[2.628s] writing manifest file '../../build/qube_description/qube_description.egg-info/SOURCES.txt'
+[2.629s] running build
+[2.629s] running build_py
+[2.630s] creating /home/aron-larsen/miniProject_ws/build/qube_description/build
+[2.630s] creating /home/aron-larsen/miniProject_ws/build/qube_description/build/lib
+[2.631s] creating /home/aron-larsen/miniProject_ws/build/qube_description/build/lib/qube_description
+[2.631s] copying qube_description/__init__.py -> /home/aron-larsen/miniProject_ws/build/qube_description/build/lib/qube_description
+[2.631s] running install
+[2.636s] running install_lib
+[2.658s] creating /home/aron-larsen/miniProject_ws/install/qube_description/lib/python3.12/site-packages/qube_description
+[2.658s] copying /home/aron-larsen/miniProject_ws/build/qube_description/build/lib/qube_description/__init__.py -> /home/aron-larsen/miniProject_ws/install/qube_description/lib/python3.12/site-packages/qube_description
+[2.658s] byte-compiling /home/aron-larsen/miniProject_ws/install/qube_description/lib/python3.12/site-packages/qube_description/__init__.py to __init__.cpython-312.pyc
+[2.659s] running install_data
+[2.659s] creating /home/aron-larsen/miniProject_ws/install/qube_description/share/ament_index
+[2.659s] creating /home/aron-larsen/miniProject_ws/install/qube_description/share/ament_index/resource_index
+[2.659s] creating /home/aron-larsen/miniProject_ws/install/qube_description/share/ament_index/resource_index/packages
+[2.659s] copying resource/qube_description -> /home/aron-larsen/miniProject_ws/install/qube_description/share/ament_index/resource_index/packages
+[2.660s] copying package.xml -> /home/aron-larsen/miniProject_ws/install/qube_description/share/qube_description
+[2.660s] running install_egg_info
+[2.682s] Copying ../../build/qube_description/qube_description.egg-info to /home/aron-larsen/miniProject_ws/install/qube_description/lib/python3.12/site-packages/qube_description-0.0.0-py3.12.egg-info
+[2.683s] running install_scripts
+[2.828s] writing list of installed files to '/home/aron-larsen/miniProject_ws/build/qube_description/install.log'
+[2.902s] Invoked command in '/home/aron-larsen/miniProject_ws/src/qube_description' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aron-larsen/miniProject_ws/build/qube_description/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aron-larsen/miniProject_ws/install/qube_description/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/qube_description build --build-base /home/aron-larsen/miniProject_ws/build/qube_description/build install --record /home/aron-larsen/miniProject_ws/build/qube_description/install.log --single-version-externally-managed install_data

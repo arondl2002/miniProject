@@ -1,0 +1,31 @@
+[2.089s] Invoking command in '/home/aron-larsen/miniProject_ws/src/qubeController': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/aron-larsen/miniProject_ws/src/build/qubeController/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/aron-larsen/miniProject_ws/src/install/qubeController/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/qubeController build --build-base /home/aron-larsen/miniProject_ws/src/build/qubeController/build install --record /home/aron-larsen/miniProject_ws/src/build/qubeController/install.log --single-version-externally-managed install_data
+[2.380s] running egg_info
+[2.381s] creating ../build/qubeController/qubeController.egg-info
+[2.401s] writing ../build/qubeController/qubeController.egg-info/PKG-INFO
+[2.401s] writing dependency_links to ../build/qubeController/qubeController.egg-info/dependency_links.txt
+[2.401s] writing requirements to ../build/qubeController/qubeController.egg-info/requires.txt
+[2.401s] writing top-level names to ../build/qubeController/qubeController.egg-info/top_level.txt
+[2.401s] writing manifest file '../build/qubeController/qubeController.egg-info/SOURCES.txt'
+[2.440s] reading manifest file '../build/qubeController/qubeController.egg-info/SOURCES.txt'
+[2.443s] writing manifest file '../build/qubeController/qubeController.egg-info/SOURCES.txt'
+[2.443s] running build
+[2.443s] running build_py
+[2.443s] creating /home/aron-larsen/miniProject_ws/src/build/qubeController/build
+[2.443s] creating /home/aron-larsen/miniProject_ws/src/build/qubeController/build/lib
+[2.443s] creating /home/aron-larsen/miniProject_ws/src/build/qubeController/build/lib/qubeController
+[2.443s] copying qubeController/__init__.py -> /home/aron-larsen/miniProject_ws/src/build/qubeController/build/lib/qubeController
+[2.443s] running install
+[2.448s] running install_lib
+[2.469s] creating /home/aron-larsen/miniProject_ws/src/install/qubeController/lib/python3.12/site-packages/qubeController
+[2.469s] copying /home/aron-larsen/miniProject_ws/src/build/qubeController/build/lib/qubeController/__init__.py -> /home/aron-larsen/miniProject_ws/src/install/qubeController/lib/python3.12/site-packages/qubeController
+[2.469s] byte-compiling /home/aron-larsen/miniProject_ws/src/install/qubeController/lib/python3.12/site-packages/qubeController/__init__.py to __init__.cpython-312.pyc
+[2.470s] running install_data
+[2.470s] creating /home/aron-larsen/miniProject_ws/src/install/qubeController/share/ament_index
+[2.470s] creating /home/aron-larsen/miniProject_ws/src/install/qubeController/share/ament_index/resource_index
+[2.472s] creating /home/aron-larsen/miniProject_ws/src/install/qubeController/share/ament_index/resource_index/packages
+[2.472s] copying resource/qubeController -> /home/aron-larsen/miniProject_ws/src/install/qubeController/share/ament_index/resource_index/packages
+[2.472s] copying package.xml -> /home/aron-larsen/miniProject_ws/src/install/qubeController/share/qubeController
+[2.472s] running install_egg_info
+[2.492s] Copying ../build/qubeController/qubeController.egg-info to /home/aron-larsen/miniProject_ws/src/install/qubeController/lib/python3.12/site-packages/qubeController-0.0.0-py3.12.egg-info
+[2.493s] running install_scripts
+[2.633s] writing list of installed files to '/home/aron-larsen/miniProject_ws/src/build/qubeController/install.log'
