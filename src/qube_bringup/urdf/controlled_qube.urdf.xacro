@@ -3,7 +3,7 @@
 
     <!-- Argumenter -->
     <xacro:arg name = "baudRate" default = "115200">
-    <xacro:arg name = "device" default = "/dev/ttyUSB0">
+    <xacro:arg name = "device" default = "/dev/ttyACM0">
     <xacro:arg name = "simulation" default = "false"/>
 
     <!-- Inkluder beskrivelse av qube -->

@@ -47,3 +47,4 @@
             <child link = "indicator"/>
             <origin xyz = "0 ${diskRadius} 0"/>
         </joint>
+</robot>
