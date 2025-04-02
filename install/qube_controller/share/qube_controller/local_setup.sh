@@ -1,0 +1,1 @@
+/home/user/miniProject/build/qube_controller/ament_cmake_environment_hooks/local_setup.sh

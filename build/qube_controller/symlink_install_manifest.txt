@@ -1,0 +1,15 @@
+/home/user/miniProject/install/qube_controller/share/ament_index/resource_index/package_run_dependencies/qube_controller
+/home/user/miniProject/install/qube_controller/share/ament_index/resource_index/parent_prefix_path/qube_controller
+/home/user/miniProject/install/qube_controller/share/qube_controller/environment/ament_prefix_path.sh
+/home/user/miniProject/install/qube_controller/share/qube_controller/environment/ament_prefix_path.dsv
+/home/user/miniProject/install/qube_controller/share/qube_controller/environment/path.sh
+/home/user/miniProject/install/qube_controller/share/qube_controller/environment/path.dsv
+/home/user/miniProject/install/qube_controller/share/qube_controller/local_setup.bash
+/home/user/miniProject/install/qube_controller/share/qube_controller/local_setup.sh
+/home/user/miniProject/install/qube_controller/share/qube_controller/local_setup.zsh
+/home/user/miniProject/install/qube_controller/share/qube_controller/local_setup.dsv
+/home/user/miniProject/install/qube_controller/share/qube_controller/package.dsv
+/home/user/miniProject/install/qube_controller/share/ament_index/resource_index/packages/qube_controller
+/home/user/miniProject/install/qube_controller/share/qube_controller/cmake/qube_controllerConfig.cmake
+/home/user/miniProject/install/qube_controller/share/qube_controller/cmake/qube_controllerConfig-version.cmake
+/home/user/miniProject/install/qube_controller/share/qube_controller/package.xml
