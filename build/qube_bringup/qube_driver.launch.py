@@ -1,5 +1,4 @@
 import os
-
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
@@ -25,7 +24,7 @@ def generate_launch_description():
 
     robot_state_publisher_Node = Node(
         package = "robot_state_publisher",
-        executable = "robot_state publisher"
+        executable = "robot_state publisher",
         parameters = [{"robotDescription": LaunchConfiguration("robotDescription")}],
         output = "screen"
     )

@@ -9,3 +9,21 @@
     <!-- Inkluder beskrivelse av qube -->
     <xacro:include filename = "$(find qube_description)/urdf/qube.macro.xacro"/>
     <xacro:include filename = "$(find qube_driver)/ros2_control/qube_driver.ros2_control.xacro"/>
+
+    <!-- Kaller qube-makro -->
+    <xacro:qube/>
+
+    <!-- Kaller driver-makro -->
+    <xacro:qube_driver_ros2_control
+        name = "qube_driver"
+        prefix = ""
+        baudRate = "$(arg baudRate)"
+        device = "$(arg device)"
+        simulation = "$(arg simulation)"/>
+
+    <!-- World link -->
+    <joint name = "base_to_world" type = "fixed">
+        <parent link = "world"/>
+        <child link = "baseLink"/>
+    </joint>
+</robot>
