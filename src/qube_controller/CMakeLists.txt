@@ -11,9 +11,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 add_executable(qube_controller src/qube_controller.cpp)
-ament_target_dependencies(qube_controller rclcpp std_msgs)
+ament_target_dependencies(qube_controller rclcpp std_msgs sensor_msgs)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
