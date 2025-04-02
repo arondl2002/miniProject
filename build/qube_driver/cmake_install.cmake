@@ -1,8 +1,8 @@
-# Install script for directory: /home/aron-larsen/miniProject_ws/src/qube_driver
+# Install script for directory: /home/user/miniProject/src/qube_driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/aron-larsen/miniProject_ws/install/qube_driver")
+  set(CMAKE_INSTALL_PREFIX "/home/user/miniProject/install/qube_driver")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -43,62 +43,13 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/package_run_dependencies" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/qube_driver")
+  include("/home/user/miniProject/build/qube_driver/ament_cmake_symlink_install/ament_cmake_symlink_install.cmake")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/parent_prefix_path" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_index/share/ament_index/resource_index/parent_prefix_path/qube_driver")
-endif()
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for each subdirectory.
+  include("/home/user/miniProject/build/qube_driver/_deps/serial-build/cmake_install.cmake")
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver/environment" TYPE FILE FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/ament_prefix_path.sh")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver/environment" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/ament_prefix_path.dsv")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver/environment" TYPE FILE FILES "/opt/ros/jazzy/share/ament_cmake_core/cmake/environment_hooks/environment/path.sh")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver/environment" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/path.dsv")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/local_setup.bash")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/local_setup.sh")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/local_setup.zsh")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/local_setup.dsv")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_environment_hooks/package.dsv")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/ament_index/resource_index/packages" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_index/share/ament_index/resource_index/packages/qube_driver")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver/cmake" TYPE FILE FILES
-    "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_core/qube_driverConfig.cmake"
-    "/home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_core/qube_driverConfig-version.cmake"
-    )
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/qube_driver" TYPE FILE FILES "/home/aron-larsen/miniProject_ws/src/qube_driver/package.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -109,5 +60,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/aron-larsen/miniProject_ws/build/qube_driver/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/user/miniProject/build/qube_driver/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

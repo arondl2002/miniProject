@@ -36,7 +36,7 @@ endif()
 set(qube_driver_FOUND_AMENT_PACKAGE TRUE)
 
 # include all config extra files
-set(_extras "")
+set(_extras "ament_cmake_export_dependencies-extras.cmake;ament_cmake_export_libraries-extras.cmake")
 foreach(_extra ${_extras})
   include("${qube_driver_DIR}/${_extra}")
 endforeach()

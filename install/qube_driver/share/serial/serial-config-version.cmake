@@ -1,0 +1,1 @@
+/home/user/miniProject/build/qube_driver/_deps/serial-build/serial-config-version.cmake

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aron-larsen/miniProject_ws/src/qube_driver
+CMAKE_SOURCE_DIR = /home/user/miniProject/src/qube_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aron-larsen/miniProject_ws/build/qube_driver
+CMAKE_BINARY_DIR = /home/user/miniProject/build/qube_driver
 
 # Utility rule file for qube_driver_uninstall.
 
@@ -67,7 +67,7 @@ include CMakeFiles/qube_driver_uninstall.dir/compiler_depend.make
 include CMakeFiles/qube_driver_uninstall.dir/progress.make
 
 CMakeFiles/qube_driver_uninstall:
-	/usr/bin/cmake -P /home/aron-larsen/miniProject_ws/build/qube_driver/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
+	/usr/bin/cmake -P /home/user/miniProject/build/qube_driver/ament_cmake_uninstall_target/ament_cmake_uninstall_target.cmake
 
 qube_driver_uninstall: CMakeFiles/qube_driver_uninstall
 qube_driver_uninstall: CMakeFiles/qube_driver_uninstall.dir/build.make
@@ -82,6 +82,6 @@ CMakeFiles/qube_driver_uninstall.dir/clean:
 .PHONY : CMakeFiles/qube_driver_uninstall.dir/clean
 
 CMakeFiles/qube_driver_uninstall.dir/depend:
-	cd /home/aron-larsen/miniProject_ws/build/qube_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aron-larsen/miniProject_ws/src/qube_driver /home/aron-larsen/miniProject_ws/src/qube_driver /home/aron-larsen/miniProject_ws/build/qube_driver /home/aron-larsen/miniProject_ws/build/qube_driver /home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles/qube_driver_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/user/miniProject/build/qube_driver && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/user/miniProject/src/qube_driver /home/user/miniProject/src/qube_driver /home/user/miniProject/build/qube_driver /home/user/miniProject/build/qube_driver /home/user/miniProject/build/qube_driver/CMakeFiles/qube_driver_uninstall.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/qube_driver_uninstall.dir/depend
 

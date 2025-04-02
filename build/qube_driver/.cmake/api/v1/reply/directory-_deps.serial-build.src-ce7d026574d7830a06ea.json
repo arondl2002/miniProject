@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "_deps/serial-build/src",
+		"source" : "/home/user/miniProject/build/qube_driver/_deps/serial-src/src"
+	}
+}

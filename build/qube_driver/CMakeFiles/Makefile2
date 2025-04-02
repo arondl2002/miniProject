@@ -54,26 +54,59 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aron-larsen/miniProject_ws/src/qube_driver
+CMAKE_SOURCE_DIR = /home/user/miniProject/src/qube_driver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aron-larsen/miniProject_ws/build/qube_driver
+CMAKE_BINARY_DIR = /home/user/miniProject/build/qube_driver
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all:
+all: CMakeFiles/qube_driver.dir/all
+all: _deps/serial-build/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: _deps/serial-build/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/qube_driver_uninstall.dir/clean
+clean: CMakeFiles/qube_driver.dir/clean
+clean: _deps/serial-build/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory _deps/serial-build
+
+# Recursive "all" directory target.
+_deps/serial-build/all: _deps/serial-build/src/all
+.PHONY : _deps/serial-build/all
+
+# Recursive "preinstall" directory target.
+_deps/serial-build/preinstall: _deps/serial-build/src/preinstall
+.PHONY : _deps/serial-build/preinstall
+
+# Recursive "clean" directory target.
+_deps/serial-build/clean: _deps/serial-build/src/clean
+.PHONY : _deps/serial-build/clean
+
+#=============================================================================
+# Directory level rules for directory _deps/serial-build/src
+
+# Recursive "all" directory target.
+_deps/serial-build/src/all: _deps/serial-build/src/CMakeFiles/serial.dir/all
+.PHONY : _deps/serial-build/src/all
+
+# Recursive "preinstall" directory target.
+_deps/serial-build/src/preinstall:
+.PHONY : _deps/serial-build/src/preinstall
+
+# Recursive "clean" directory target.
+_deps/serial-build/src/clean: _deps/serial-build/src/CMakeFiles/serial.dir/clean
+.PHONY : _deps/serial-build/src/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/uninstall.dir
@@ -82,14 +115,14 @@ clean: CMakeFiles/qube_driver_uninstall.dir/clean
 CMakeFiles/uninstall.dir/all: CMakeFiles/qube_driver_uninstall.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles --progress-num= "Built target uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/miniProject/build/qube_driver/CMakeFiles --progress-num= "Built target uninstall"
 .PHONY : CMakeFiles/uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 0
 .PHONY : CMakeFiles/uninstall.dir/rule
 
 # Convenience name for target.
@@ -108,14 +141,14 @@ CMakeFiles/uninstall.dir/clean:
 CMakeFiles/qube_driver_uninstall.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qube_driver_uninstall.dir/build.make CMakeFiles/qube_driver_uninstall.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qube_driver_uninstall.dir/build.make CMakeFiles/qube_driver_uninstall.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles --progress-num= "Built target qube_driver_uninstall"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/miniProject/build/qube_driver/CMakeFiles --progress-num= "Built target qube_driver_uninstall"
 .PHONY : CMakeFiles/qube_driver_uninstall.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/qube_driver_uninstall.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 0
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/qube_driver_uninstall.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aron-larsen/miniProject_ws/build/qube_driver/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 0
 .PHONY : CMakeFiles/qube_driver_uninstall.dir/rule
 
 # Convenience name for target.
@@ -126,6 +159,58 @@ qube_driver_uninstall: CMakeFiles/qube_driver_uninstall.dir/rule
 CMakeFiles/qube_driver_uninstall.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/qube_driver_uninstall.dir/build.make CMakeFiles/qube_driver_uninstall.dir/clean
 .PHONY : CMakeFiles/qube_driver_uninstall.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/qube_driver.dir
+
+# All Build rule for target.
+CMakeFiles/qube_driver.dir/all: _deps/serial-build/src/CMakeFiles/serial.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qube_driver.dir/build.make CMakeFiles/qube_driver.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qube_driver.dir/build.make CMakeFiles/qube_driver.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/miniProject/build/qube_driver/CMakeFiles --progress-num=1,2 "Built target qube_driver"
+.PHONY : CMakeFiles/qube_driver.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/qube_driver.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/qube_driver.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 0
+.PHONY : CMakeFiles/qube_driver.dir/rule
+
+# Convenience name for target.
+qube_driver: CMakeFiles/qube_driver.dir/rule
+.PHONY : qube_driver
+
+# clean rule for target.
+CMakeFiles/qube_driver.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/qube_driver.dir/build.make CMakeFiles/qube_driver.dir/clean
+.PHONY : CMakeFiles/qube_driver.dir/clean
+
+#=============================================================================
+# Target rules for target _deps/serial-build/src/CMakeFiles/serial.dir
+
+# All Build rule for target.
+_deps/serial-build/src/CMakeFiles/serial.dir/all:
+	$(MAKE) $(MAKESILENT) -f _deps/serial-build/src/CMakeFiles/serial.dir/build.make _deps/serial-build/src/CMakeFiles/serial.dir/depend
+	$(MAKE) $(MAKESILENT) -f _deps/serial-build/src/CMakeFiles/serial.dir/build.make _deps/serial-build/src/CMakeFiles/serial.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/user/miniProject/build/qube_driver/CMakeFiles --progress-num=3,4,5,6 "Built target serial"
+.PHONY : _deps/serial-build/src/CMakeFiles/serial.dir/all
+
+# Build rule for subdir invocation for target.
+_deps/serial-build/src/CMakeFiles/serial.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 _deps/serial-build/src/CMakeFiles/serial.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/user/miniProject/build/qube_driver/CMakeFiles 0
+.PHONY : _deps/serial-build/src/CMakeFiles/serial.dir/rule
+
+# Convenience name for target.
+serial: _deps/serial-build/src/CMakeFiles/serial.dir/rule
+.PHONY : serial
+
+# clean rule for target.
+_deps/serial-build/src/CMakeFiles/serial.dir/clean:
+	$(MAKE) $(MAKESILENT) -f _deps/serial-build/src/CMakeFiles/serial.dir/build.make _deps/serial-build/src/CMakeFiles/serial.dir/clean
+.PHONY : _deps/serial-build/src/CMakeFiles/serial.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

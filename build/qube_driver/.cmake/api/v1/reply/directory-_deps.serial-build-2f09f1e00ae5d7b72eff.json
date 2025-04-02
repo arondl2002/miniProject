@@ -1,0 +1,91 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"_install",
+			"ament_cmake_symlink_install_targets",
+			"install"
+		],
+		"files" : 
+		[
+			"/opt/ros/jazzy/share/ament_cmake_core/cmake/symlink_install/ament_cmake_symlink_install_targets.cmake",
+			"/opt/ros/jazzy/share/ament_cmake_core/cmake/symlink_install/install.cmake",
+			"/home/user/miniProject/build/qube_driver/_deps/serial-src/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 47,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 37,
+				"parent" : 1
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 50,
+				"parent" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 49,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 1,
+				"line" : 43,
+				"parent" : 4
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"_deps/serial-build/src/libserial.a"
+			],
+			"targetId" : "serial::@8c08b95a08f1dcfab930",
+			"targetIndex" : 2,
+			"type" : "target"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "share/serial",
+			"exportName" : "serial-targets",
+			"exportTargets" : 
+			[
+				{
+					"id" : "serial::@8c08b95a08f1dcfab930",
+					"index" : 2
+				}
+			],
+			"paths" : 
+			[
+				"_deps/serial-build/CMakeFiles/Export/1dfb26d561f5ac588a7368b895d28964/serial-targets.cmake"
+			],
+			"type" : "export"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "_deps/serial-build",
+		"source" : "/home/user/miniProject/build/qube_driver/_deps/serial-src"
+	}
+}
