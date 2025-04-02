@@ -1,3 +1,4 @@
 CMakeCache.txt
 log
 _deps
+src/*/install
