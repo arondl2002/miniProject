@@ -1,1 +1,0 @@
-/home/user/miniProject/build/qube_driver/_deps/serial-src/include/serial/v8stdint.h

@@ -1,1 +1,0 @@
-/home/user/miniProject/build/qube_driver/ament_cmake_core/qube_driverConfig-version.cmake
