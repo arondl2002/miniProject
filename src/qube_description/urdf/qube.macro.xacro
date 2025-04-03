@@ -1,5 +1,5 @@
 <?xml version = "1.0"?>
-<robot xmls:xacro = "https://wwww.ros.org/wiki/xacro">
+<robot xmlns:xacro = "https://wwww.ros.org/wiki/xacro">
     <xacro:macro name = "qube">
         <xacro:property name = "baseSize" value = "0.1" />
         <xacro:property name = "diskRadius" value = "0.05" />
@@ -9,7 +9,7 @@
         <link name = "baseLink">
             <visual>
                 <geometry>
-                    <box size = "${baseSize} ${baseSize} ${baseSize}">
+					<box size = "${baseSize} ${baseSize} ${baseSize}"/>
                 </geometry>
                 <material name =  "black">
                     <color rgba = "0 0 0 1"/>
@@ -41,10 +41,17 @@
             </visual>
         </link>
 
-        <-- Koblinger (Joints) -->
+        <!-- Koblinger (Joints) -->
         <joint name = "indicatorJoint" type = "fixed">
             <parent link = "disk"/>
             <child link = "indicator"/>
             <origin xyz = "0 ${diskRadius} 0"/>
         </joint>
+
+        <joint name = "diskJoint" type = "fixed">
+            <parent link = "baseLink"/>
+            <child link = "disk"/>
+            <origin xyz = "0 ${diskRadius} 0"/>
+        </joint>
+	</xacro:macro>
 </robot>

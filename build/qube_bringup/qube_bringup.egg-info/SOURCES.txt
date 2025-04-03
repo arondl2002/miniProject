@@ -7,6 +7,7 @@ setup.py
 ../../build/qube_bringup/qube_bringup.egg-info/requires.txt
 ../../build/qube_bringup/qube_bringup.egg-info/top_level.txt
 ../../build/qube_bringup/qube_bringup.egg-info/zip-safe
+launch/bringup.launch.py
 qube_bringup/__init__.py
 qube_bringup.egg-info/PKG-INFO
 qube_bringup.egg-info/SOURCES.txt
@@ -15,3 +16,4 @@ qube_bringup.egg-info/requires.txt
 qube_bringup.egg-info/top_level.txt
 qube_bringup.egg-info/zip-safe
 resource/qube_bringup
+urdf/controlled_qube.urdf.xacro

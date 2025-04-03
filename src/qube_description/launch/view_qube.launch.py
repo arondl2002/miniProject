@@ -6,13 +6,14 @@ import xacro
 
 def generate_launch_description():
     urdf_file = os.path.join(get_package_share_directory("qube_description"), "urdf", "qube.urdf.xacro")
-    robot_description = xacro.process_file(urdf_file)
+    robot_description = xacro.process_file(urdf_file).toprettyxml()
+    params = {'robot_description': robot_description}
     return LaunchDescription([
         #Launch Node
         Node(
             package = "robot_state_publisher",
             executable = "robot_state_publisher",
-            arguments = [robot_description],
+            parameters = [params],
             output = "screen"
         ),
         Node(

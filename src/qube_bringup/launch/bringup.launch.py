@@ -24,7 +24,7 @@ def generate_launch_description():
 
     robot_state_publisher_Node = Node(
         package = "robot_state_publisher",
-        executable = "robot_state publisher",
+        executable = "robot_state_publisher",
         parameters = [{"robotDescription": LaunchConfiguration("robotDescription")}],
         output = "screen"
     )

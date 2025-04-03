@@ -7,6 +7,7 @@ setup.py
 ../../build/qube_description/qube_description.egg-info/requires.txt
 ../../build/qube_description/qube_description.egg-info/top_level.txt
 ../../build/qube_description/qube_description.egg-info/zip-safe
+launch/view_qube.launch.py
 qube_description/__init__.py
 qube_description.egg-info/PKG-INFO
 qube_description.egg-info/SOURCES.txt
@@ -15,3 +16,5 @@ qube_description.egg-info/requires.txt
 qube_description.egg-info/top_level.txt
 qube_description.egg-info/zip-safe
 resource/qube_description
+urdf/qube.macro.xacro
+urdf/qube.urdf.xacro
