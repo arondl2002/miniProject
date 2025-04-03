@@ -3,3 +3,4 @@ log
 CMakeFiles
 build
 install
+.cache
