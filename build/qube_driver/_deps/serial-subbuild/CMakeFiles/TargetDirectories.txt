@@ -1,3 +1,0 @@
-/home/user/miniProject/build/qube_driver/_deps/serial-subbuild/CMakeFiles/serial-populate.dir
-/home/user/miniProject/build/qube_driver/_deps/serial-subbuild/CMakeFiles/edit_cache.dir
-/home/user/miniProject/build/qube_driver/_deps/serial-subbuild/CMakeFiles/rebuild_cache.dir

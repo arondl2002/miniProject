@@ -1,1 +1,0 @@
-/home/user/miniProject/src/qube_description/setup.py

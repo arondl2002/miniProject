@@ -1,3 +1,0 @@
-/home/user/miniProject/install/qube_driver/lib/libserial.a
-/home/user/miniProject/install/qube_driver/share/serial/serial-targets.cmake
-/home/user/miniProject/install/qube_driver/share/serial/serial-targets-noconfig.cmake
