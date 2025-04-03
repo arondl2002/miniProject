@@ -5,6 +5,7 @@ from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+import xacro
 
 def generate_launch_description():
     qube_driver_launch = IncludeLaunchDescription(
@@ -22,12 +23,23 @@ def generate_launch_description():
         output = "screen"
     )
 
+    urdf_file = os.path.join(get_package_share_directory("qube_bringup"), "urdf", "controlled_qube.urdf.xacro")
+    robot_description = xacro.process_file(urdf_file).toprettyxml()
+    params = {'robot_description': robot_description}
+
     robot_state_publisher_Node = Node(
         package = "robot_state_publisher",
         executable = "robot_state_publisher",
-        parameters = [{"robotDescription": LaunchConfiguration("robotDescription")}],
+        parameters = [params],
         output = "screen"
     )
+
+    #joint_state_publisher_Node = Node(
+    #    package = "joint_state_publisher",
+    #    executable = "joint_state_publisher",
+    #    parameters = [{"jointDescription": LaunchConfiguration("jointDescription")}],
+    #    output = "screen"
+    #)
 
     return LaunchDescription([
         DeclareLaunchArgument(

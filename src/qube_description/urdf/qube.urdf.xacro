@@ -1,11 +1,11 @@
 <?xml version = "1.0"?>
 <robot name="qube" xmlns:xacro = "https://wwww.ros.org/wiki/xacro">
 
-<xacro:include filename="$(find qube_description)/urdf/qube.macro.xacro" />
+	<xacro:include filename="$(find qube_description)/urdf/qube.macro.xacro" />
 
-<link name = "world"/>
+	<link name = "world"/>
 
-<xacro:qube/>
+	<xacro:qube/>
 
 	<joint name = "worldJoint" type = "fixed">
 		<parent link = "world"/>

@@ -2,8 +2,8 @@
 <robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
 
     <!-- Argumenter -->
-    <xacro:arg name = "baudRate" default = "115200">
-    <xacro:arg name = "device" default = "/dev/ttyACM0">
+	<xacro:arg name = "baud_rate" default = "115200"/>
+	<xacro:arg name = "device" default = "/dev/ttyACM0"/>
     <xacro:arg name = "simulation" default = "false"/>
 
     <!-- Inkluder beskrivelse av qube -->
@@ -17,7 +17,7 @@
     <xacro:qube_driver_ros2_control
         name = "qube_driver"
         prefix = ""
-        baudRate = "$(arg baudRate)"
+        baud_rate = "$(arg baud_rate)"
         device = "$(arg device)"
         simulation = "$(arg simulation)"/>
 
