@@ -16,6 +16,10 @@ find_package(sensor_msgs REQUIRED)
 add_executable(qube_controller src/qube_controller.cpp)
 ament_target_dependencies(qube_controller rclcpp std_msgs sensor_msgs)
 
+install(TARGETS
+	qube_controller
+	DESTINATION lib/${PROJECT_NAME})
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights

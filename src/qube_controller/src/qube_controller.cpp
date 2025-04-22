@@ -19,7 +19,7 @@ public:
 	}
 
 protected:
-	double kp = 0, ki = 0, kd = 0;
+	double kp = 1, ki = 0, kd = 0;
 	double prevError = 0;
 	double integral = 0;
 	double setpoint = 0, current = 0;
@@ -34,7 +34,7 @@ public:
 		this->declare_parameter("kp", 1.0);
 		this->declare_parameter("ki", 0.0);
 		this->declare_parameter("kd", 0.0);
-		this->declare_parameter("setpoint", 0);
+		this->declare_parameter("setpoint", 0.0);
 		auto parameter_callback =
 			[this](const std::vector<rclcpp::Parameter> &params)
 			{
@@ -68,9 +68,10 @@ public:
 			[this](sensor_msgs::msg::JointState::UniquePtr msg)
 			{
 				current = msg->position.front();
+				RCLCPP_INFO(this->get_logger(), "Current position: %f", current);
 			};
 		state_sub = this->create_subscription<sensor_msgs::msg::JointState>("/joint_states", 10, joint_state_listener);
-		cmd_pub = this->create_publisher<std_msgs::msg::Float64MultiArray>("/velocity_controller/command", 10);
+		cmd_pub = this->create_publisher<std_msgs::msg::Float64MultiArray>("/velocity_controller/commands", 10);
 		wall_timer = create_wall_timer(std::chrono::milliseconds(20), [this]()
 		{
 			double pådrag = this->update(0.02);
