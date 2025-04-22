@@ -2,27 +2,61 @@
 #include "rclcpp/rclcpp.hpp"
 #include "std_msgs/msg/float64_multi_array.hpp"
 #include "sensor_msgs/msg/joint_state.hpp"
+#include <algorithm>
+#include <chrono>
+
+class Timer
+{
+public:
+	Timer()
+	{
+		now = std::chrono::steady_clock::now();
+		old = now;
+	}
+
+	double getDt()
+	{
+		now = std::chrono::steady_clock::now();
+		std::chrono::duration<double> diff = now - old;
+		old = now;
+		return diff.count();
+	}
+
+private:
+	std::chrono::time_point<std::chrono::steady_clock> now, old;
+};
 
 class PidController
 {
 public:
-	double update(double dt)
+	double update()
 	{
+		double dt = timer.getDt();
 		double error = setpoint - current;
 
 		integral += error * dt;
+		integral = std::min(MINMAX_I, std::max(-MINMAX_I, integral));
+
 		double derivative = (error - prevError) / dt;
 
 		prevError = error;
 
-		return kp * error + ki * integral + derivative * kd;
+		double output = kp * error + ki * integral + derivative * kd;
+
+		output = std::min(MINMAX_OUTPUT, std::max(-MINMAX_OUTPUT, output));
+
+		return output;
 	}
 
 protected:
-	double kp = 1, ki = 0, kd = 0;
+	static constexpr double MINMAX_I = 10;
+	static constexpr double MINMAX_OUTPUT = 100;
+
+	double kp = 0, ki = 0, kd = 0;
 	double prevError = 0;
 	double integral = 0;
 	double setpoint = 0, current = 0;
+	Timer timer;
 };
 
 class QubeControllerNode : public PidController, public rclcpp::Node
@@ -31,10 +65,6 @@ public:
 	QubeControllerNode()
 		: Node("qube_controller_node")
 	{
-		this->declare_parameter("kp", 1.0);
-		this->declare_parameter("ki", 0.0);
-		this->declare_parameter("kd", 0.0);
-		this->declare_parameter("setpoint", 0.0);
 		auto parameter_callback =
 			[this](const std::vector<rclcpp::Parameter> &params)
 			{
@@ -63,6 +93,10 @@ public:
 				}
 			};
 		post_set_parameters_handle = this->add_post_set_parameters_callback(parameter_callback);
+		this->declare_parameter("kp", 23.0);
+		this->declare_parameter("ki", 0.294);
+		this->declare_parameter("kd", 0.1);
+		this->declare_parameter("setpoint", 0.0);
 
 		auto joint_state_listener = 
 			[this](sensor_msgs::msg::JointState::UniquePtr msg)
@@ -74,10 +108,11 @@ public:
 		cmd_pub = this->create_publisher<std_msgs::msg::Float64MultiArray>("/velocity_controller/commands", 10);
 		wall_timer = create_wall_timer(std::chrono::milliseconds(20), [this]()
 		{
-			double pådrag = this->update(0.02);
+			double pådrag = this->update();
 			auto message = std_msgs::msg::Float64MultiArray();
 			message.data.push_back(std::move(pådrag));
 			//RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data);
+			//RCLCPP_INFO(this->get_logger(), "Delta Time: '%f'", timer.getDt());
 			this->cmd_pub->publish(message);
 		});
 	}
