@@ -5,7 +5,7 @@ I dette mini-prosjektet har vi tatt utgangspunkt i labøving 1, 2 og 3 for å in
 - qube_controller: Innholder en PID-kontroller som regulerer roboten.
 
 Beskrivelse av hvordan systemet er satt opp
-- I oppgave 1 beskriver viroboten, eller "Qube" (kube) som vi refere den til, i en Xacro/URDF-fil. Filen definnerer leddene til roboten, samt samt linker og relasjoner til verden. Denne beskrivelsen tar også for seg ROS2 Control-konfigurasjon som gjør det mulig å anvende kontroller for å styre roboten via simulering eller maskinvaregensesnitt.
+- I oppgave 1 beskriver vi roboten, eller "Qube" (kube) som vi refere den til, i en Xacro/URDF-fil. Filen definnerer leddene til roboten, samt samt linker og relasjoner til verden. Denne beskrivelsen tar også for seg ROS2 Control-konfigurasjon som gjør det mulig å anvende kontroller for å styre roboten via simulering eller maskinvaregensesnitt.
 
 - I oppgave 2 knytter vi robotbeskrivelsen til kontrollsystemet med å inkludere ros2_control-controller manager, samt nødvendige hardware interface-konfigurasjoner i Xacro-filen. Dette lar det muliggjøres å starte en kontroll-node som kommuniserer med den fysiske hardwaren eller simulert modell basert på parameteret simulation.
 
