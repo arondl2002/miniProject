@@ -13,7 +13,7 @@ Beskrivelse av hvordan systemet er satt opp
 
 - Oppgave 4 inneholder en PID-kontroller som styres basert på en måleverdi, mottatt fra /joint_states. Den publiserer hastighetspådraget til /velocity_controller/commands. For å stille PID-verdier i etterkant kan man sette parameter verdier.
 ```bash
-ros2 param set /qube_controller_node *parameter navn* *float verdi*
+ros2 param set /qube_controller_node _parameter navn_ _float verdi_
 ```
 Mulige parameternavn er 'kp', for P verdi, 'ki', for I verdi, 'kd', for D verdi og 'setpoint' for setpunktverdi
 
