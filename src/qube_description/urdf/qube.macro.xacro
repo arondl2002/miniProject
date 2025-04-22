@@ -45,6 +45,7 @@
         <joint name = "motor_joint" type = "continuous">
             <parent link = "baseLink"/>
             <child link = "disk"/>
+			<axis xyz = "0 0 1"/>
 			<origin xyz = "0 0 ${baseSize / 2}"/>
         </joint>
 
