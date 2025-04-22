@@ -14,6 +14,7 @@ public:
 		old = now;
 	}
 
+	// Returns time since last called
 	double getDt()
 	{
 		now = std::chrono::steady_clock::now();
@@ -29,12 +30,14 @@ private:
 class PidController
 {
 public:
+	// Returns pid output
 	double update()
 	{
 		double dt = timer.getDt();
 		double error = setpoint - current;
 
 		integral += error * dt;
+		// Clamping integral effect
 		integral = std::min(MINMAX_I, std::max(-MINMAX_I, integral));
 
 		double derivative = (error - prevError) / dt;
@@ -43,13 +46,16 @@ public:
 
 		double output = kp * error + ki * integral + derivative * kd;
 
+		// Clamping output value
 		output = std::min(MINMAX_OUTPUT, std::max(-MINMAX_OUTPUT, output));
 
 		return output;
 	}
 
 protected:
+	// Absolute value limits for integral windup
 	static constexpr double MINMAX_I = 10;
+	// Absolute value limits for total output value
 	static constexpr double MINMAX_OUTPUT = 100;
 
 	double kp = 0, ki = 0, kd = 0;
@@ -59,15 +65,18 @@ protected:
 	Timer timer;
 };
 
+// Wraps PidController and rclcpp::Node together in a class
 class QubeControllerNode : public PidController, public rclcpp::Node
 {
 public:
 	QubeControllerNode()
 		: Node("qube_controller_node")
 	{
+		// Parameter callback function
 		auto parameter_callback =
 			[this](const std::vector<rclcpp::Parameter> &params)
 			{
+				// Loop through and set the correct param
 				for (const auto &param : params)
 				{
 					if (param.get_name() == "kp")
@@ -92,27 +101,30 @@ public:
 					}
 				}
 			};
+		// Attach parameter set callback
 		post_set_parameters_handle = this->add_post_set_parameters_callback(parameter_callback);
 		this->declare_parameter("kp", 23.0);
 		this->declare_parameter("ki", 0.294);
-		this->declare_parameter("kd", 0.1);
+		this->declare_parameter("kd", 0.05);
 		this->declare_parameter("setpoint", 0.0);
 
+		// Joint State Subscriber callback function
 		auto joint_state_listener = 
 			[this](sensor_msgs::msg::JointState::UniquePtr msg)
 			{
 				current = msg->position.front();
 				RCLCPP_INFO(this->get_logger(), "Current position: %f", current);
 			};
+		// Attaching callback to /joint_states
 		state_sub = this->create_subscription<sensor_msgs::msg::JointState>("/joint_states", 10, joint_state_listener);
+		// Attach publisher to /velocity_controller/commands
 		cmd_pub = this->create_publisher<std_msgs::msg::Float64MultiArray>("/velocity_controller/commands", 10);
 		wall_timer = create_wall_timer(std::chrono::milliseconds(20), [this]()
 		{
-			double pådrag = this->update();
+			double output = this->update();
 			auto message = std_msgs::msg::Float64MultiArray();
-			message.data.push_back(std::move(pådrag));
-			//RCLCPP_INFO(this->get_logger(), "Publishing: '%f'", message.data);
-			//RCLCPP_INFO(this->get_logger(), "Delta Time: '%f'", timer.getDt());
+			message.data.push_back(std::move(output));
+			// Publishing output value
 			this->cmd_pub->publish(message);
 		});
 	}
