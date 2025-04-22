@@ -113,7 +113,6 @@ public:
 			[this](sensor_msgs::msg::JointState::UniquePtr msg)
 			{
 				current = msg->position.front();
-				RCLCPP_INFO(this->get_logger(), "Current position: %f", current);
 			};
 		// Attaching callback to /joint_states
 		state_sub = this->create_subscription<sensor_msgs::msg::JointState>("/joint_states", 10, joint_state_listener);

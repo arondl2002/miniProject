@@ -4,7 +4,7 @@
     <!-- Argumenter -->
 	<xacro:arg name = "baud_rate" default = "115200"/>
 	<xacro:arg name = "device" default = "/dev/ttyACM0"/>
-    <xacro:arg name = "simulation" default = "false"/>
+    <xacro:arg name = "simulation" default = "true"/>
 
     <!-- Inkluder beskrivelse av qube -->
     <xacro:include filename = "$(find qube_description)/urdf/qube.macro.xacro"/>

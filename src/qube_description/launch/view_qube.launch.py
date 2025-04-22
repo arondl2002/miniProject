@@ -5,32 +5,30 @@ import os
 import xacro
 
 def generate_launch_description():
-    # Henter "path"en til URDF (robotbeskrivelsen), samt prosessere Xacro-filen
+    # Retrieve path to urdf file
     urdf_file = os.path.join(get_package_share_directory("qube_description"), "urdf", "qube.urdf.xacro")
+    # Parse file as xml
     robot_description = xacro.process_file(urdf_file).toxml()
-    params = {'robot_description': robot_description}
 
-    # Henter konfigurasjonsfilen for RViz
+    # Retrieve rviz config file
     rviz_config = os.path.join(get_package_share_directory("qube_description"), "rviz", "config.rviz")
 
-    # Returnerer en liste med noder som kjøres opp ved initialisering
+    # Return a list of declared nodes to start
     return LaunchDescription([
-        # Initialiserer publisering for robottilstand med utgnagspunkt i URDF
+        # Declare robot_state_publisher node
         Node(
             package = "robot_state_publisher",
             executable = "robot_state_publisher",
             name="robot_state_publisher",
-            parameters = [params]
+            parameters = [{'robot_description': robot_description}]
         ),
-        
-        # Initialiserer publisering av leddtilstand for roboten 
+        # Declare joint_state_publisher node
         Node(
             package="joint_state_publisher",
             executable="joint_state_publisher",
             name="joint_state_publisher"
         ),
-
-        # Initialiserer RViz med spesifik konfigurasjon for robot visualisering
+        # Declare rviz node
         Node(
             package = "rviz2",
             executable = "rviz2",

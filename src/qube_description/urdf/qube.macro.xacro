@@ -5,7 +5,7 @@
 		<xacro:property name = "diskRadius" value = "${baseSize / 4}" />
         <xacro:property name = "diskHeight" value = "0.01" />
 
-        <!-- Svart boks -->
+        <!-- Qube base, the black box -->
         <link name = "baseLink">
             <visual>
                 <geometry>
@@ -17,7 +17,7 @@
             </visual>
         </link>
 
-        <!-- Rød disk -->
+        <!-- Red disk -->
         <link name = "disk">
             <visual>
                 <geometry>
@@ -29,7 +29,7 @@
             </visual>
         </link>
 
-        <!-- Indikator -->
+        <!-- White indicator line -->
         <link name = "indicator">
             <visual>
                 <geometry>
@@ -45,7 +45,7 @@
         <joint name = "motor_joint" type = "continuous">
             <parent link = "baseLink"/>
             <child link = "disk"/>
-			<!-- Invert rotation to follow real one correctly -->
+			<!-- Invert rotation to follow the real one correctly -->
 			<axis xyz = "0 0 -1"/>
 			<origin xyz = "0 0 ${baseSize / 2}"/>
         </joint>
