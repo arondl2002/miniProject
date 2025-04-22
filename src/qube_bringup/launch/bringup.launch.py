@@ -14,40 +14,42 @@ def generate_launch_description():
         )
     )
 
-    rviz_ConfigFile = os.path.join(get_package_share_directory("qube_description"), "rviz", "view_cube.rviz")
-    rvizNode = Node(
+    rviz_config = os.path.join(get_package_share_directory("qube_description"), "rviz", "config.rviz")
+    rviz_node = Node(
         package = "rviz2",
         executable = "rviz2",
         name = "rviz2",
-        arguments = ["-d", rviz_ConfigFile],
+        arguments = ["-d", rviz_config],
         output = "screen"
     )
 
     urdf_file = os.path.join(get_package_share_directory("qube_bringup"), "urdf", "controlled_qube.urdf.xacro")
     robot_description = xacro.process_file(urdf_file).toprettyxml()
-    params = {'robot_description': robot_description}
+    params = {"robot_description": robot_description}
 
-    robot_state_publisher_Node = Node(
+    robot_state_publisher_node = Node(
         package = "robot_state_publisher",
         executable = "robot_state_publisher",
-        parameters = [params],
-        output = "screen"
+        parameters = [params]
     )
 
-    #joint_state_publisher_Node = Node(
-    #    package = "joint_state_publisher",
-    #    executable = "joint_state_publisher",
-    #    parameters = [{"jointDescription": LaunchConfiguration("jointDescription")}],
-    #    output = "screen"
-    #)
+    joint_state_publisher_node = Node(
+        package="joint_state_publisher",
+        executable="joint_state_publisher",
+        name="joint_state_publisher",
+    )
+
+    nodes_to_start = [
+        robot_state_publisher_node,
+        joint_state_publisher_node,
+        rviz_node,
+        qube_driver_launch
+    ]
 
     return LaunchDescription([
         DeclareLaunchArgument(
-            "robotDescription",
+            "robot_description",
             default_value = os.path.join(get_package_share_directory("qube_bringup"), "urdf", "controlled_qube.urdf.xacro"),
             description = "Full path to the robot URDF file"
         ),
-        qube_driver_launch,
-        robot_state_publisher_Node,
-        rvizNode
-    ])
+    ] + nodes_to_start)

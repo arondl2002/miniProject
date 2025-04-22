@@ -13,6 +13,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
         (os.path.join('share', package_name, 'launch'), ['launch/view_qube.launch.py']),
         (os.path.join('share', package_name, 'urdf'), ['urdf/qube.urdf.xacro', 'urdf/qube.macro.xacro']),
+        (os.path.join('share', package_name, 'rviz'), ['rviz/config.rviz']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
