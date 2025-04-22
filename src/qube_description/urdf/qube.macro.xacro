@@ -42,7 +42,7 @@
         </link>
 
         <!-- Koblinger (Joints) -->
-        <joint name = "diskJoint" type = "fixed">
+        <joint name = "motor_joint" type = "continuous">
             <parent link = "baseLink"/>
             <child link = "disk"/>
 			<origin xyz = "0 0 ${baseSize / 2}"/>

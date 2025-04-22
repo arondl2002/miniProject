@@ -1,10 +1,10 @@
 <?xml version = "1.0"?>
-<robot xmlns:xacro = "https://www.ros.org/wiki/xacro">
+<robot name="qube" xmlns:xacro = "https://www.ros.org/wiki/xacro">
 
     <!-- Argumenter -->
 	<xacro:arg name = "baud_rate" default = "115200"/>
 	<xacro:arg name = "device" default = "/dev/ttyACM0"/>
-    <xacro:arg name = "simulation" default = "false"/>
+    <xacro:arg name = "simulation" default = "true"/>
 
     <!-- Inkluder beskrivelse av qube -->
     <xacro:include filename = "$(find qube_description)/urdf/qube.macro.xacro"/>
@@ -20,6 +20,8 @@
         baud_rate = "$(arg baud_rate)"
         device = "$(arg device)"
         simulation = "$(arg simulation)"/>
+
+	<link name = "world"/>
 
     <!-- World link -->
     <joint name = "base_to_world" type = "fixed">
