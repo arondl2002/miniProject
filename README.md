@@ -9,8 +9,8 @@ Beskrivelse av hvordan systemet er satt opp
 
 - I oppgave 2 knytter vi robotbeskrivelsen til kontrollsystemet med å inkludere ros2_control-controller manager, samt nødvendige hardware interface-konfigurasjoner i Xacro-filen. Dette lar det muliggjøres å starte en kontroll-node som kommuniserer med den fysiske hardwaren eller simulert modell basert på parameteret simulation.
 
-- I Oppgave 3 settes det opp en "publiser" for robot tilstand som publiserer transformasjonen mellom robotens linker utfra sensor- og kontrollverdier. Noden lar oss lese "robot_description"-parametet fra parameter-serveren, og er avgjørende for at andre noder, som RViz skal kunne visualisere robotens nåværende tilstand.
+- I Oppgave 3 settes det opp en "publisher" for robot tilstand som publiserer transformasjonen mellom robotens linker utfra sensor- og kontrollverdier. Noden lar oss lese "robot_description"-parameteret fra parameter-serveren, og er avgjørende for at andre noder, som RViz, skal kunne visualisere robotens nåværende tilstand.
 
-- Oppgave 4 tar vi for oss hvordan dataen flyter mellom komponentene i systmet via ROS2 topics. Kontrolleren publiserer(publish) og abonnerer(subscribe) på topics som tar for segbåde komandoer og inngående måledata. det blir etablert topics som posisjon og hastighet som anvendes av "controll manager" og "robot_state_publisher.
+- Oppgave 4 tar vi for oss hvordan dataen flyter mellom komponentene i systmet via ROS2 topics. Kontrolleren publiserer(publish) og abonnerer(subscribe) på topics som tar for seg både komandoer og inngående måledata. det blir etablert topics som posisjon og hastighet som anvendes av "controll manager" og "robot_state_publisher.
 
 - Til slutt åpnes RViz for å visualisere robotmodellen og sanntidsdataen fra transformasjonen og topics. Dette lar oss følge bevegelsene og posisjonen til roboten, samt simulerte og/eller fysiske tilstander.
